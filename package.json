@@ -1,0 +1,20 @@
+{
+  "name": "status",
+  "description": "HTTP status utility",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "twitter": "https://twitter.com/jongleberry"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/expressjs/statuses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/expressjs/statuses/issues",
+    "email": "me@jongleberry.com"
+  },
+  "license": "MIT"
+}
