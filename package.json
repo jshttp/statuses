@@ -1,5 +1,5 @@
 {
-  "name": "status",
+  "name": "statuses",
   "description": "HTTP status utility",
   "version": "1.0.0",
   "author": {
