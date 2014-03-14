@@ -60,6 +60,15 @@ status.empty[204] // => true
 status.empty[304] // => true
 ```
 
+### status.retry[code]
+
+Returns `true` if you should retry the rest.
+
+```js
+status.retry[501] // => undefined
+status.retry[503] // => true
+```
+
 ## License
 
 The MIT License (MIT)

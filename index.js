@@ -29,6 +29,13 @@ status.empty = {
   304: true,
 };
 
+// status codes for when you should retry the request
+status.retry = {
+  502: true,
+  503: true,
+  504: true,
+};
+
 function status(code) {
   if (typeof code === 'number') {
     if (!status[code]) throw new Error('invalid status code: ' + code);
