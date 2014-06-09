@@ -20,6 +20,7 @@ status.redirect = {
   303: true,
   305: true,
   307: true,
+  308: true,
 };
 
 // status codes for empty bodies
