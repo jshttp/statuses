@@ -8,13 +8,12 @@
     "url": "http://jongleberry.com",
     "twitter": "https://twitter.com/jongleberry"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/expressjs/statuses.git"
-  },
-  "bugs": {
-    "url": "https://github.com/expressjs/statuses/issues",
-    "email": "me@jongleberry.com"
-  },
-  "license": "MIT"
+  "repository": "jshttp/statuses",
+  "license": "MIT",
+  "keywords": [
+    "http",
+    "status",
+    "code"
+  ],
+  "files": ["index.js"]
 }
