@@ -16,6 +16,7 @@
     "code"
   ],
   "files": [
-    "index.js"
+    "index.js",
+    "LICENSE"
   ]
 }
