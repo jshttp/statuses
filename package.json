@@ -18,5 +18,14 @@
   "files": [
     "index.js",
     "LICENSE"
-  ]
+  ],
+  "devDependencies": {
+    "mocha": "1",
+    "istanbul": "0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
+  }
 }
