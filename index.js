@@ -1,5 +1,5 @@
-var http = require('http');
-var codes = http.STATUS_CODES;
+
+var codes = require('./codes');
 
 module.exports = status;
 
