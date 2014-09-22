@@ -17,6 +17,7 @@
   ],
   "files": [
     "index.js",
+    "codes.json",
     "LICENSE"
   ],
   "devDependencies": {
@@ -24,6 +25,7 @@
     "istanbul": "0"
   },
   "scripts": {
+    "update": "node update.js",
     "test": "mocha --reporter spec --bail --check-leaks",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
     "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"

@@ -75,6 +75,17 @@ status.retry[501] // => undefined
 status.retry[503] // => true
 ```
 
+### statuses/codes.json
+
+```js
+var codes = require('statuses/codes.json');
+```
+
+This is a JSON file of the status codes
+taken from `require('http').STATUS_CODES`.
+This is saved so that codes are consistent even in older node.js versions.
+For example, `308` will be added in v0.12.
+
 [npm-image]: https://img.shields.io/npm/v/statuses.svg?style=flat
 [npm-url]: https://npmjs.org/package/statuses
 [node-version-image]: http://img.shields.io/badge/node.js-%3E%3D_0.6-brightgreen.svg?style=flat
