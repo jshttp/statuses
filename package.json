@@ -21,11 +21,15 @@
     "LICENSE"
   ],
   "devDependencies": {
+    "csv-parse": "0.0.6",
+    "istanbul": "0",
     "mocha": "1",
-    "istanbul": "0"
+    "request": "^2.44.0",
+    "stream-to-array": "^2.0.2"
   },
   "scripts": {
-    "update": "node update.js",
+    "build": "node scripts/build.js",
+    "update": "node scripts/update.js",
     "test": "mocha --reporter spec --bail --check-leaks",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks",
     "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks"
