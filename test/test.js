@@ -4,6 +4,15 @@ var assert = require('assert')
 var status = require('..')
 
 describe('Statuses', function () {
+  describe('codes', function () {
+    it('should include all of node\'s', function () {
+      var codes = require('http').STATUS_CODES
+      Object.keys(codes).forEach(function (code) {
+        assert(status(code))
+      })
+    })
+  })
+
   describe('.redirect', function () {
     it('should include 308', function () {
       assert(status.redirect[308])
