@@ -24,7 +24,6 @@
     "csv-parse": "0.0.6",
     "istanbul": "0",
     "mocha": "1",
-    "request": "2",
     "stream-to-array": "2"
   },
   "scripts": {
