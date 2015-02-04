@@ -102,7 +102,7 @@ function createStatusCodeList (codes) {
 function status (code) {
   if (typeof code === 'number') {
     if (!status.message[code]) throw new Error('invalid status code: ' + code)
-    return code
+    return status.message[code]
   }
 
   if (typeof code !== 'string') {
@@ -113,7 +113,7 @@ function status (code) {
   var n = parseInt(code, 10)
   if (!isNaN(n)) {
     if (!status.message[n]) throw new Error('invalid status code: ' + n)
-    return n
+    return status.message[n]
   }
 
   n = status.code[code.toLowerCase()]

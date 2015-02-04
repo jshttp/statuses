@@ -12,7 +12,7 @@ describe('status', function () {
       })
 
       it('should accept a number', function () {
-        assert.strictEqual(status(200), 200)
+        assert.strictEqual(status(200), 'OK')
       })
 
       it('should accept a string', function () {
@@ -20,7 +20,7 @@ describe('status', function () {
       })
 
       it('should accept a string number', function () {
-        assert.strictEqual(status('200'), 200)
+        assert.strictEqual(status('200'), 'OK')
       })
 
       it('should reject an object', function () {
@@ -30,10 +30,10 @@ describe('status', function () {
   })
 
   describe('when given a number', function () {
-    it('should be truthy when a valid status code', function () {
-      assert.ok(status(200))
-      assert.ok(status(404))
-      assert.ok(status(500))
+    it('should return message when a valid status code', function () {
+      assert.strictEqual(status(200), 'OK')
+      assert.strictEqual(status(404), 'Not Found')
+      assert.strictEqual(status(500), 'Internal Server Error')
     })
 
     it('should throw for invalid status code', function () {
@@ -48,10 +48,10 @@ describe('status', function () {
   })
 
   describe('when given a string', function () {
-    it('should be truthy when a valid status code', function () {
-      assert.ok(status('200'))
-      assert.ok(status('404'))
-      assert.ok(status('500'))
+    it('should return message when a valid status code', function () {
+      assert.strictEqual(status('200'), 'OK')
+      assert.strictEqual(status('404'), 'Not Found')
+      assert.strictEqual(status('500'), 'Internal Server Error')
     })
 
     it('should be truthy when a valid status message', function () {

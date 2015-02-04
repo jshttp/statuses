@@ -36,14 +36,19 @@ var status = require('statuses')
 
 ### var code = status(Integer || String)
 
-If `Integer` or `String` is a valid HTTP code or status message, then the
-appropriate `code` will be returned. Otherwise, an error will be thrown.
+If `Integer` or `String` is a valid HTTP code then the matching status
+message will be returned.
+
+If `String` is a valid HTTP status message, then the matching `code`
+will be returned.
+
+Otherwise, an error will be thrown.
 
 <!-- eslint-disable no-undef -->
 
 ```js
-status(403) // => 403
-status('403') // => 403
+status(403) // => 'Forbibben'
+status('403') // => 'Forbibben'
 status('forbidden') // => 403
 status('Forbidden') // => 403
 status(306) // throws, as it's not supported by node.js

@@ -7,6 +7,7 @@ unreleased
   * Remove `status[msg]` exports; use `status.code[msg]`
   * Rename `425 Unordered Collection` to standard `425 Too Early`
   * Rename `STATUS_CODES` export to `message`
+  * Return status message for `statuses(code)` when given code
 
 1.5.0 / 2018-03-27
 ==================
