@@ -21,7 +21,7 @@
     "LICENSE"
   ],
   "devDependencies": {
-    "csv-parse": "0.0.6",
+    "csv-parse": "1.0.1",
     "istanbul": "0.4.1",
     "mocha": "1.21.5",
     "stream-to-array": "2.2.0"
