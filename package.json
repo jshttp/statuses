@@ -22,7 +22,7 @@
   ],
   "devDependencies": {
     "csv-parse": "1.0.1",
-    "istanbul": "0.4.1",
+    "istanbul": "0.4.2",
     "mocha": "1.21.5",
     "stream-to-array": "2.2.0"
   },
