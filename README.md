@@ -102,13 +102,13 @@ npm run fetch
 npm run build
 ```
 
-[npm-image]: https://img.shields.io/npm/v/statuses.svg?style=flat
+[npm-image]: https://img.shields.io/npm/v/statuses.svg
 [npm-url]: https://npmjs.org/package/statuses
-[node-version-image]: http://img.shields.io/badge/node.js-%3E%3D_0.6-brightgreen.svg?style=flat
+[node-version-image]: http://img.shields.io/badge/node.js-%3E%3D_0.6-brightgreen.svg
 [node-version-url]: https://nodejs.org/en/download
-[travis-image]: https://img.shields.io/travis/jshttp/statuses.svg?style=flat
+[travis-image]: https://img.shields.io/travis/jshttp/statuses.svg
 [travis-url]: https://travis-ci.org/jshttp/statuses
-[coveralls-image]: https://img.shields.io/coveralls/jshttp/statuses.svg?style=flat
+[coveralls-image]: https://img.shields.io/coveralls/jshttp/statuses.svg
 [coveralls-url]: https://coveralls.io/r/jshttp/statuses?branch=master
-[downloads-image]: http://img.shields.io/npm/dm/statuses.svg?style=flat
+[downloads-image]: http://img.shields.io/npm/dm/statuses.svg
 [downloads-url]: https://npmjs.org/package/statuses
