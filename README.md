@@ -97,7 +97,7 @@ To rebuild `codes.json`, run the following:
 
 ```bash
 # update src/iana.json
-npm run update
+npm run fetch
 # build codes.json
 npm run build
 ```
