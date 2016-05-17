@@ -1,6 +1,7 @@
 /*!
  * statuses
  * Copyright(c) 2014 Jonathan Ong
+ * Copyright(c) 2016 Douglas Christopher Wilson
  * MIT Licensed
  */
 
@@ -20,14 +21,8 @@ var codes = require('./codes.json')
 
 module.exports = status
 
-// [Integer...]
-status.codes = Object.keys(codes).map(function (code) {
-  code = ~~code
-  var msg = codes[code]
-  status[code] = msg
-  status[msg] = status[msg.toLowerCase()] = code
-  return code
-})
+// array of status codes
+status.codes = populateStatusesMap(status, codes)
 
 // status codes for redirects
 status.redirect = {
@@ -52,6 +47,30 @@ status.retry = {
   502: true,
   503: true,
   504: true
+}
+
+/**
+ * Populate the statuses map for given codes.
+ * @private
+ */
+
+function populateStatusesMap (statuses, codes) {
+  var arr = []
+
+  Object.keys(codes).forEach(function forEachCode (code) {
+    var message = codes[code]
+    var status = Number(code)
+
+    // Populate properties
+    statuses[status] = message
+    statuses[message] = status
+    statuses[message.toLowerCase()] = status
+
+    // Add to array
+    arr.push(status)
+  })
+
+  return arr
 }
 
 /**
