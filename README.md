@@ -11,7 +11,7 @@ HTTP status utility for node.
 ## API
 
 ```js
-var status = require('statuses');
+var status = require('statuses')
 ```
 
 ### var code = status(Integer || String)
@@ -78,7 +78,7 @@ status.retry[503] // => true
 ### statuses/codes.json
 
 ```js
-var codes = require('statuses/codes.json');
+var codes = require('statuses/codes.json')
 ```
 
 This is a JSON file of the status codes
