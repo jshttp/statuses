@@ -16,6 +16,7 @@
     "code"
   ],
   "files": [
+    "HISTORY.md",
     "index.js",
     "codes.json",
     "LICENSE"
