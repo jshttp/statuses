@@ -27,6 +27,9 @@
     "mocha": "1.21.5",
     "stream-to-array": "2.2.0"
   },
+  "engines": {
+    "node": ">= 0.6"
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "fetch": "node scripts/fetch.js",
