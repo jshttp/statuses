@@ -83,6 +83,17 @@ describe('status', function () {
     })
   })
 
+  describe('.empty', function () {
+    it('should be an object', function () {
+      assert.ok(status.empty)
+      assert.equal(typeof status.empty, 'object')
+    })
+
+    it('should include 204', function () {
+      assert(status.empty[204])
+    })
+  })
+
   describe('.redirect', function () {
     it('should be an object', function () {
       assert.ok(status.redirect)
