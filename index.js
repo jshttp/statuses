@@ -4,7 +4,17 @@
  * MIT Licensed
  */
 
+/**
+ * Module dependencies.
+ * @private
+ */
+
 var codes = require('./codes.json');
+
+/**
+ * Module exports.
+ * @public
+ */
 
 module.exports = status;
 
@@ -41,6 +51,20 @@ status.retry = {
   503: true,
   504: true,
 };
+
+/**
+ * Get the status code.
+ *
+ * Given a number, this will throw if it is not a known status
+ * code, otherwise the code will be returned. Given a string,
+ * the string will be parsed for a number and return the code
+ * if valid, otherwise will lookup the code assuming this is
+ * the status message.
+ *
+ * @param {string|number} code
+ * @returns {string}
+ * @public
+ */
 
 function status(code) {
   if (typeof code === 'number') {
