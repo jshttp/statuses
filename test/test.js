@@ -104,4 +104,15 @@ describe('status', function () {
       assert(status.redirect[308])
     })
   })
+
+  describe('.retry', function () {
+    it('should be an object', function () {
+      assert.ok(status.retry)
+      assert.equal(typeof status.retry, 'object')
+    })
+
+    it('should include 504', function () {
+      assert(status.retry[504])
+    })
+  })
 })
