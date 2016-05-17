@@ -1,65 +1,96 @@
 
 var assert = require('assert')
+var http = require('http')
 
 var status = require('..')
 
-describe('Statuses', function () {
-  describe('codes', function () {
-    it('should include all of node\'s', function () {
-      var codes = require('http').STATUS_CODES
-      Object.keys(codes).forEach(function (code) {
-        assert(status(code))
+describe('status', function () {
+  describe('arguments', function () {
+    describe('code', function () {
+      it('should be required', function () {
+        assert.throws(status, /code must be/)
+      })
+
+      it('should accept a number', function () {
+        assert.equal(status(200), 200)
+      })
+
+      it('should accept a string', function () {
+        assert.equal(status('OK'), 200)
+      })
+
+      it('should accept a string number', function () {
+        assert.equal(status('200'), 200)
+      })
+
+      it('should reject an object', function () {
+        assert.throws(status.bind(null, {}), /code must be/)
+      })
+    })
+  })
+
+  describe('when given a number', function () {
+    it('should be truthy when a valid status code', function () {
+      assert.ok(status(200))
+      assert.ok(status(404))
+      assert.ok(status(500))
+    })
+
+    it('should throw for invalid status code', function () {
+      assert.throws(status.bind(null, 0), /invalid status code/)
+      assert.throws(status.bind(null, 1000), /invalid status code/)
+    })
+
+    it('should throw for unknown status code', function () {
+      assert.throws(status.bind(null, 299), /invalid status code/)
+      assert.throws(status.bind(null, 310), /invalid status code/)
+    })
+  })
+
+  describe('when given a string', function () {
+    it('should be truthy when a valid status code', function () {
+      assert.ok(status('200'))
+      assert.ok(status('404'))
+      assert.ok(status('500'))
+    })
+
+    it('should be truthy when a valid status message', function () {
+      assert.ok(status('OK'))
+      assert.ok(status('Not Found'))
+      assert.ok(status('Internal Server Error'))
+    })
+
+    it('should be case insensitive', function () {
+      assert.ok(status('Ok'))
+      assert.ok(status('not found'))
+      assert.ok(status('INTERNAL SERVER ERROR'))
+    })
+
+    it('should throw for unknown status message', function () {
+      assert.throws(status.bind(null, 'too many bugs'), /invalid status message/)
+    })
+
+    it('should throw for unknown status code', function () {
+      assert.throws(status.bind(null, '299'), /invalid status code/)
+    })
+  })
+
+  describe('.codes', function () {
+    it('should include codes from Node.js', function () {
+      Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
+        assert.notEqual(status.codes[Number(code)], -1, 'contains ' + code)
       })
     })
   })
 
   describe('.redirect', function () {
+    it('should be an object', function () {
+      assert.ok(status.redirect)
+      assert.equal(typeof status.redirect, 'object')
+    })
+
     it('should include 308', function () {
       assert(status.redirect[308])
-    })
-  })
-
-  describe('status', function () {
-    describe('(number)', function () {
-      it('should be truthy when valid', function () {
-        assert(status(404))
-      })
-
-      it('should throw when invalid', function () {
-        assert.throws(function () {
-          status(0)
-        })
-      })
-    })
-
-    describe('(number string)', function () {
-      it('should be truthy when valid', function () {
-        assert(status('404'))
-      })
-
-      it('should throw when invalid', function () {
-        assert.throws(function () {
-          status('0')
-        })
-      })
-    })
-
-    describe('(status string)', function () {
-      it('should be truthy when valid', function () {
-        assert(status('Not Found'))
-      })
-
-      it('should throw when invalid', function () {
-        assert.throws(function () {
-          status('asdf')
-        })
-      })
-    })
-
-    it('should throw a TypeError on anything but numbers and strings', function () {
-      assert.throws(function () {
-        status([])
-      })
     })
   })
 })
