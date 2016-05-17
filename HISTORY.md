@@ -2,6 +2,7 @@ unreleased
 ==========
 
   * Add `421 Misdirected Request`
+  * perf: enable strict mode
 
 1.2.1 / 2015-02-01
 ==================
