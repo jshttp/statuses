@@ -35,7 +35,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "fetch": "node scripts/fetch.js",
-    "lint": "eslint **/*.js",
+    "lint": "eslint .",
     "test": "mocha --reporter spec --check-leaks --bail test/",
     "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
