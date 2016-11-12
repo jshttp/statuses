@@ -1,3 +1,8 @@
+unreleased
+==========
+
+  * Fix return type in JSDoc
+
 1.3.0 / 2016-05-17
 ==================
 
