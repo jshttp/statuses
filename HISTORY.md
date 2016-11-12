@@ -1,5 +1,5 @@
-unreleased
-==========
+1.3.1 / 2016-11-11
+==================
 
   * Fix return type in JSDoc
 
