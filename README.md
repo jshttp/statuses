@@ -10,6 +10,8 @@ HTTP status utility for node.
 
 ## API
 
+<!-- eslint-disable no-unused-vars -->
+
 ```js
 var status = require('statuses')
 ```
@@ -17,6 +19,8 @@ var status = require('statuses')
 ### var code = status(Integer || String)
 
 If `Integer` or `String` is a valid HTTP code or status message, then the appropriate `code` will be returned. Otherwise, an error will be thrown.
+
+<!-- eslint-disable no-undef -->
 
 ```js
 status(403) // => 403
@@ -34,6 +38,8 @@ Returns an array of all the status codes as `Integer`s.
 
 Map of `code` to `status message`. `undefined` for invalid `code`s.
 
+<!-- eslint-disable no-undef -->
+
 ```js
 status[404] // => 'Not Found'
 ```
@@ -41,6 +47,8 @@ status[404] // => 'Not Found'
 ### var code = status[msg]
 
 Map of `status message` to `code`. `msg` can either be title-cased or lower-cased. `undefined` for invalid `status message`s.
+
+<!-- eslint-disable no-undef -->
 
 ```js
 status['not found'] // => 404
@@ -51,6 +59,8 @@ status['Not Found'] // => 404
 
 Returns `true` if a status code is a valid redirect status.
 
+<!-- eslint-disable no-undef -->
+
 ```js
 status.redirect[200] // => undefined
 status.redirect[301] // => true
@@ -59,6 +69,8 @@ status.redirect[301] // => true
 ### status.empty[code]
 
 Returns `true` if a status code expects an empty body.
+
+<!-- eslint-disable no-undef -->
 
 ```js
 status.empty[200] // => undefined
@@ -69,6 +81,8 @@ status.empty[304] // => true
 ### status.retry[code]
 
 Returns `true` if you should retry the rest.
+
+<!-- eslint-disable no-undef -->
 
 ```js
 status.retry[501] // => undefined

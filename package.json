@@ -23,6 +23,7 @@
     "csv-parse": "1.1.9",
     "eslint": "3.13.1",
     "eslint-config-standard": "6.2.1",
+    "eslint-plugin-markdown": "1.0.0-beta.3",
     "eslint-plugin-promise": "3.3.2",
     "eslint-plugin-standard": "2.0.1",
     "istanbul": "0.4.5",
@@ -35,7 +36,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "fetch": "node scripts/fetch.js",
-    "lint": "eslint .",
+    "lint": "eslint --plugin markdown --ext js,md .",
     "test": "mocha --reporter spec --check-leaks --bail test/",
     "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
