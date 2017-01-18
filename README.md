@@ -101,8 +101,8 @@ status.retry[503] // => true
 
 ## Adding Status Codes
 
-The status codes are primarily sourced from http://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv.
-Additionally, custom codes are added from http://en.wikipedia.org/wiki/List_of_HTTP_status_codes.
+The status codes are primarily sourced from https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv.
+Additionally, custom codes are added from https://en.wikipedia.org/wiki/List_of_HTTP_status_codes.
 These are added manually in the `lib/*.json` files.
 If you would like to add a status code, add it to the appropriate JSON file.
 
