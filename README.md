@@ -28,7 +28,8 @@ var status = require('statuses')
 
 ### var code = status(Integer || String)
 
-If `Integer` or `String` is a valid HTTP code or status message, then the appropriate `code` will be returned. Otherwise, an error will be thrown.
+If `Integer` or `String` is a valid HTTP code or status message, then the
+appropriate `code` will be returned. Otherwise, an error will be thrown.
 
 <!-- eslint-disable no-undef -->
 
@@ -56,7 +57,8 @@ status[404] // => 'Not Found'
 
 ### var code = status[msg]
 
-Map of `status message` to `code`. `msg` can either be title-cased or lower-cased. `undefined` for invalid `status message`s.
+Map of `status message` to `code`. `msg` can either be title-cased or
+lower-cased. `undefined` for invalid `status message`s.
 
 <!-- eslint-disable no-undef -->
 
@@ -101,10 +103,12 @@ status.retry[503] // => true
 
 ## Adding Status Codes
 
-The status codes are primarily sourced from https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv.
-Additionally, custom codes are added from https://en.wikipedia.org/wiki/List_of_HTTP_status_codes.
-These are added manually in the `lib/*.json` files.
-If you would like to add a status code, add it to the appropriate JSON file.
+The status codes are primarily sourced from
+https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv.
+Additionally, custom codes are added from
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes. These are added
+manually in the `lib/*.json` files. If you would like to add a status code,
+add it to the appropriate JSON file.
 
 To rebuild `codes.json`, run the following:
 
