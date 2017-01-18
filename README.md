@@ -117,7 +117,7 @@ npm run build
 
 [npm-image]: https://img.shields.io/npm/v/statuses.svg
 [npm-url]: https://npmjs.org/package/statuses
-[node-version-image]: https://img.shields.io/badge/node.js-%3E%3D_0.6-brightgreen.svg
+[node-version-image]: https://img.shields.io/node/v/statuses.svg
 [node-version-url]: https://nodejs.org/en/download
 [travis-image]: https://img.shields.io/travis/jshttp/statuses.svg
 [travis-url]: https://travis-ci.org/jshttp/statuses
