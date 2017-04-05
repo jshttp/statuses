@@ -49,7 +49,7 @@ Returns an array of all the status codes as `Integer`s.
 
 Map of `code` to `status message`. `undefined` for invalid `code`s.
 
-<!-- eslint-disable no-undef -->
+<!-- eslint-disable no-undef, no-unused-expressions -->
 
 ```js
 status[404] // => 'Not Found'
@@ -60,7 +60,7 @@ status[404] // => 'Not Found'
 Map of `status message` to `code`. `msg` can either be title-cased or
 lower-cased. `undefined` for invalid `status message`s.
 
-<!-- eslint-disable no-undef -->
+<!-- eslint-disable no-undef, no-unused-expressions -->
 
 ```js
 status['not found'] // => 404
@@ -71,7 +71,7 @@ status['Not Found'] // => 404
 
 Returns `true` if a status code is a valid redirect status.
 
-<!-- eslint-disable no-undef -->
+<!-- eslint-disable no-undef, no-unused-expressions -->
 
 ```js
 status.redirect[200] // => undefined
@@ -82,7 +82,7 @@ status.redirect[301] // => true
 
 Returns `true` if a status code expects an empty body.
 
-<!-- eslint-disable no-undef -->
+<!-- eslint-disable no-undef, no-unused-expressions -->
 
 ```js
 status.empty[200] // => undefined
@@ -94,7 +94,7 @@ status.empty[304] // => true
 
 Returns `true` if you should retry the rest.
 
-<!-- eslint-disable no-undef -->
+<!-- eslint-disable no-undef, no-unused-expressions -->
 
 ```js
 status.retry[501] // => undefined
