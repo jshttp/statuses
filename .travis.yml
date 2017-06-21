@@ -11,11 +11,15 @@ node_js:
   - "5.12"
   - "6.11"
   - "7.10"
+  - "8.1"
 sudo: false
 cache:
   directories:
     - node_modules
 before_install:
+  # Skip updating shrinkwrap / lock
+  - "npm config set shrinkwrap false"
+
   # Remove all non-test dependencies
   - "npm rm --save-dev csv-parse"
   - "npm rm --save-dev stream-to-array"
