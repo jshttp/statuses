@@ -9,6 +9,23 @@ var URL = 'https://www.iana.org/assignments/http-status-codes/http-status-codes-
 https.get(URL, function onResponse (res) {
   toArray(res.pipe(parser()), function (err, codes) {
     if (err) throw err
-    fs.writeFile('src/iana.json', JSON.stringify(codes))
+    var fd = fs.openSync('src/iana.json', 'w')
+
+    fs.writeSync(fd, '[\n')
+
+    codes.forEach(function (code) {
+      fs.writeSync(fd, '  ' + JSON.stringify(code) + endLine.apply(this, arguments))
+    })
+
+    fs.writeSync(fd, ']\n')
+
+    fs.closeSync(fd)
   })
 })
+
+function endLine (val, index, array) {
+  var comma = index + 1 === array.length
+    ? ''
+    : ','
+  return comma + '\n'
+}
