@@ -12,7 +12,7 @@
  * @private
  */
 
-var codes = require('./codes.json')
+var codes = require('http').STATUS_CODES
 
 /**
  * Module exports.
