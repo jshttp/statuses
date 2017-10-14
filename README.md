@@ -41,6 +41,12 @@ status('Forbidden') // => 403
 status(306) // throws, as it's not supported by node.js
 ```
 
+### status.STATUS_CODES
+
+Returns an object which maps status codes to status messages, in
+the same format as the
+[Node.js http module](https://nodejs.org/dist/latest/docs/api/http.html#http_http_status_codes).
+
 ### status.codes
 
 Returns an array of all the status codes as `Integer`s.

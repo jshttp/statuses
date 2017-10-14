@@ -1,3 +1,8 @@
+unreleased
+==========
+
+  * Add `STATUS_CODES` export
+
 1.3.1 / 2016-11-11
 ==================
 
