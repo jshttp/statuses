@@ -21,6 +21,9 @@ var codes = require('./codes.json')
 
 module.exports = status
 
+// raw status codes.
+status.STATUS_CODES = codes
+
 // array of status codes
 status.codes = populateStatusesMap(status, codes)
 
