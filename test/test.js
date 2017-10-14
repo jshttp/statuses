@@ -78,7 +78,7 @@ describe('status', function () {
   describe('.codes', function () {
     it('should include codes from Node.js', function () {
       Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
-        assert.notEqual(status.codes[Number(code)], -1, 'contains ' + code)
+        assert.notEqual(status.codes.indexOf(Number(code)), -1, 'contains ' + code)
       })
     })
   })
