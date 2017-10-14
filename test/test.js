@@ -75,6 +75,18 @@ describe('status', function () {
     })
   })
 
+  describe('.STATUS_CODES', function () {
+    it('should contain the expected ok status', function () {
+      assert.equal(status.STATUS_CODES[200], 'OK')
+    })
+
+    it('should include status code map from Node.js', function () {
+      Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
+        assert.ok(status.STATUS_CODES[code], 'contains ' + code)
+      })
+    })
+  })
+
   describe('.codes', function () {
     it('should include codes from Node.js', function () {
       Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
