@@ -11,7 +11,8 @@ var codes = require('../src/iana.json')
   'draft',
   'apache',
   'nginx',
-  'node'
+  'node',
+  'unofficial'
 ].forEach(function (src) {
   var json = require('../lib/' + src + '.json')
   Object.keys(json).forEach(function (key) {
