@@ -16,10 +16,7 @@ addData(codes, require('../src/nginx.json'))
 addData(codes, require('../lib/apache.json'))
 
 // add the codes from node
-addData(codes, require('../lib/node.json'))
-
-// add the rfc codes
-addData(codes, require('../lib/rfc.json'))
+addData(codes, require('../src/node.json'))
 
 // write the JSON object
 write(path.join(__dirname, '../codes.json'), codes)
