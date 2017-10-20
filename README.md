@@ -8,6 +8,14 @@
 
 HTTP status utility for node.
 
+This module provides a list of status codes and messages sourced from
+a few different projects:
+
+  * The [IANA Status Code Registry](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+  * The [Node.js project](https://nodejs.org/)
+  * The [NGINX project](https://www.nginx.com/)
+  * The [Apache HTTP Server project](https://httpd.apache.org/)
+
 ## Installation
 
 This is a [Node.js](https://nodejs.org/en/) module available through the
@@ -105,24 +113,6 @@ Returns `true` if you should retry the rest.
 ```js
 status.retry[501] // => undefined
 status.retry[503] // => true
-```
-
-## Adding Status Codes
-
-The status codes are primarily sourced from
-https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv.
-Additionally, custom codes are added from
-https://en.wikipedia.org/wiki/List_of_HTTP_status_codes. These are added
-manually in the `lib/*.json` files. If you would like to add a status code,
-add it to the appropriate JSON file.
-
-To rebuild `codes.json`, run the following:
-
-```bash
-# update src/iana.json
-npm run fetch
-# build codes.json
-npm run build
 ```
 
 [npm-image]: https://img.shields.io/npm/v/statuses.svg
