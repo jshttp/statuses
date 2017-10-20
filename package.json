@@ -38,7 +38,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "fetch": "node scripts/fetch-iana.js && node scripts/fetch-nginx.js && node scripts/fetch-node.js",
+    "fetch": "node scripts/fetch-apache.js && node scripts/fetch-iana.js && node scripts/fetch-nginx.js && node scripts/fetch-node.js",
     "lint": "eslint --plugin markdown --ext js,md .",
     "test": "mocha --reporter spec --check-leaks --bail test/",
     "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
