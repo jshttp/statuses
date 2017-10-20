@@ -38,7 +38,7 @@
   ["409","Conflict","[RFC7231, Section 6.5.8]"],
   ["410","Gone","[RFC7231, Section 6.5.9]"],
   ["411","Length Required","[RFC7231, Section 6.5.10]"],
-  ["412","Precondition Failed","[RFC7232, Section 4.2]"],
+  ["412","Precondition Failed","[RFC7232, Section 4.2][RFC8144, Section 3.2]"],
   ["413","Payload Too Large","[RFC7231, Section 6.5.11]"],
   ["414","URI Too Long","[RFC7231, Section 6.5.12]"],
   ["415","Unsupported Media Type","[RFC7231, Section 6.5.13][RFC7694, Section 3]"],
