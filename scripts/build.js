@@ -21,9 +21,6 @@ addData(codes, require('../lib/node.json'))
 // add the rfc codes
 addData(codes, require('../lib/rfc.json'))
 
-// add the draft codes
-addData(codes, require('../lib/draft.json'))
-
 // write the JSON object
 write(path.join(__dirname, '../codes.json'), codes)
 
