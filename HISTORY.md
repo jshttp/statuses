@@ -1,5 +1,5 @@
-unreleased
-==========
+1.4.0 / 2017-10-20
+==================
 
   * Add `STATUS_CODES` export
 
