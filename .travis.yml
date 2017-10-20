@@ -23,6 +23,7 @@ before_install:
 
   # Remove all non-test dependencies
   - "npm rm --save-dev csv-parse"
+  - "npm rm --save-dev raw-body"
   - "npm rm --save-dev stream-to-array"
 
   # Setup Node.js version-specific dependencies

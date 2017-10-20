@@ -10,7 +10,7 @@ var codes = {}
 addData(codes, require('../src/iana.json'))
 
 // add the codes from nginx
-addData(codes, require('../lib/nginx.json'))
+addData(codes, require('../src/nginx.json'))
 
 // add the codes from apache
 addData(codes, require('../lib/apache.json'))
