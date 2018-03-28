@@ -1,7 +1,7 @@
 {
   "name": "statuses",
   "description": "HTTP status utility",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "contributors": [
     "Douglas Christopher Wilson <doug@somethingdoug.com>",
     "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
