@@ -12,15 +12,15 @@ describe('status', function () {
       })
 
       it('should accept a number', function () {
-        assert.equal(status(200), 200)
+        assert.strictEqual(status(200), 200)
       })
 
       it('should accept a string', function () {
-        assert.equal(status('OK'), 200)
+        assert.strictEqual(status('OK'), 200)
       })
 
       it('should accept a string number', function () {
-        assert.equal(status('200'), 200)
+        assert.strictEqual(status('200'), 200)
       })
 
       it('should reject an object', function () {
@@ -77,7 +77,7 @@ describe('status', function () {
 
   describe('.STATUS_CODES', function () {
     it('should be a map of code to message', function () {
-      assert.equal(status.STATUS_CODES[200], 'OK')
+      assert.strictEqual(status.STATUS_CODES[200], 'OK')
     })
 
     it('should include codes from Node.js', function () {
@@ -90,7 +90,7 @@ describe('status', function () {
   describe('.codes', function () {
     it('should include codes from Node.js', function () {
       Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
-        assert.notEqual(status.codes.indexOf(Number(code)), -1, 'contains ' + code)
+        assert.notStrictEqual(status.codes.indexOf(Number(code)), -1, 'contains ' + code)
       })
     })
   })
@@ -98,7 +98,7 @@ describe('status', function () {
   describe('.empty', function () {
     it('should be an object', function () {
       assert.ok(status.empty)
-      assert.equal(typeof status.empty, 'object')
+      assert.strictEqual(typeof status.empty, 'object')
     })
 
     it('should include 204', function () {
@@ -109,7 +109,7 @@ describe('status', function () {
   describe('.redirect', function () {
     it('should be an object', function () {
       assert.ok(status.redirect)
-      assert.equal(typeof status.redirect, 'object')
+      assert.strictEqual(typeof status.redirect, 'object')
     })
 
     it('should include 308', function () {
@@ -120,7 +120,7 @@ describe('status', function () {
   describe('.retry', function () {
     it('should be an object', function () {
       assert.ok(status.retry)
-      assert.equal(typeof status.retry, 'object')
+      assert.strictEqual(typeof status.retry, 'object')
     })
 
     it('should include 504', function () {
