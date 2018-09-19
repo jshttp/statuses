@@ -34,7 +34,7 @@
     "stream-to-array": "2.3.0"
   },
   "engines": {
-    "node": ">= 0.6"
+    "node": ">= 0.8"
   },
   "scripts": {
     "build": "node scripts/build.js",

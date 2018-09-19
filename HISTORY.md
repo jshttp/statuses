@@ -1,3 +1,8 @@
+unreleased
+==========
+
+  * Drop support for Node.js 0.6
+
 1.5.0 / 2018-03-27
 ==================
 
