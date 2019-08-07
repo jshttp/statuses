@@ -30,7 +30,7 @@
     "eslint-plugin-standard": "4.0.0",
     "istanbul": "0.4.5",
     "mocha": "6.2.0",
-    "raw-body": "2.4.0",
+    "raw-body": "2.4.1",
     "stream-to-array": "2.3.0"
   },
   "engines": {
