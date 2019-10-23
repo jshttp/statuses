@@ -20,7 +20,7 @@
     "LICENSE"
   ],
   "devDependencies": {
-    "csv-parse": "4.4.5",
+    "csv-parse": "4.6.5",
     "eslint": "6.3.0",
     "eslint-config-standard": "14.1.0",
     "eslint-plugin-import": "2.18.2",
