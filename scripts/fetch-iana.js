@@ -20,9 +20,17 @@ https.get(URL, { headers: HEADERS }, function onResponse (res) {
     rows.forEach(function (row) {
       var obj = row.reduce(reduceRows, {})
 
-      if (obj.description !== 'Unassigned') {
-        codes[obj.value] = obj.description
+      // skip unassigned codes
+      if (obj.description === 'Unassigned') {
+        return
       }
+
+      // skip retired 306 code
+      if (obj.value === '306') {
+        return
+      }
+
+      codes[obj.value] = obj.description
     })
 
     write(path.join(__dirname, '../src/iana.json'), codes)

@@ -3,6 +3,7 @@ unreleased
 
   * Drop support for Node.js 0.6
   * Fix messaging casing of `418 I'm a Teapot`
+  * Remove code 306
   * Remove `status[code]` exports; use `status.message[code]`
   * Remove `status[msg]` exports; use `status.code[msg]`
   * Rename `425 Unordered Collection` to standard `425 Too Early`

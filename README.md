@@ -51,7 +51,7 @@ status(403) // => 'Forbibben'
 status('403') // => 'Forbibben'
 status('forbidden') // => 403
 status('Forbidden') // => 403
-status(306) // throws, as it's not supported by node.js
+status(306) // throws, as it's no longer supported by the HTTP spec
 ```
 
 ### status.codes

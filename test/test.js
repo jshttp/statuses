@@ -45,6 +45,10 @@ describe('status', function () {
       assert.throws(status.bind(null, 299), /invalid status code/)
       assert.throws(status.bind(null, 310), /invalid status code/)
     })
+
+    it('should throw for discontinued status code', function () {
+      assert.throws(status.bind(null, 306), /invalid status code/)
+    })
   })
 
   describe('when given a string', function () {
