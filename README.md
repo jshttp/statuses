@@ -81,17 +81,6 @@ status['not found'] // => 404
 status['Not Found'] // => 404
 ```
 
-### status.redirect[code]
-
-Returns `true` if a status code is a valid redirect status.
-
-<!-- eslint-disable no-undef, no-unused-expressions -->
-
-```js
-status.redirect[200] // => undefined
-status.redirect[301] // => true
-```
-
 ### status.empty[code]
 
 Returns `true` if a status code expects an empty body.
@@ -102,6 +91,17 @@ Returns `true` if a status code expects an empty body.
 status.empty[200] // => undefined
 status.empty[204] // => true
 status.empty[304] // => true
+```
+
+### status.redirect[code]
+
+Returns `true` if a status code is a valid redirect status.
+
+<!-- eslint-disable no-undef, no-unused-expressions -->
+
+```js
+status.redirect[200] // => undefined
+status.redirect[301] // => true
 ```
 
 ### status.retry[code]
