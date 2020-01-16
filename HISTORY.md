@@ -3,6 +3,7 @@ unreleased
 
   * Drop support for Node.js 0.6
   * Rename `425 Unordered Collection` to standard `425 Too Early`
+  * Rename `STATUS_CODES` export to `message`
 
 1.5.0 / 2018-03-27
 ==================

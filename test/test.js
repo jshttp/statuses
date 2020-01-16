@@ -75,18 +75,6 @@ describe('status', function () {
     })
   })
 
-  describe('.STATUS_CODES', function () {
-    it('should be a map of code to message', function () {
-      assert.strictEqual(status.STATUS_CODES[200], 'OK')
-    })
-
-    it('should include codes from Node.js', function () {
-      Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
-        assert.ok(status.STATUS_CODES[code], 'contains ' + code)
-      })
-    })
-  })
-
   describe('.codes', function () {
     it('should include codes from Node.js', function () {
       Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
@@ -103,6 +91,18 @@ describe('status', function () {
 
     it('should include 204', function () {
       assert(status.empty[204])
+    })
+  })
+
+  describe('.message', function () {
+    it('should be a map of code to message', function () {
+      assert.strictEqual(status.message[200], 'OK')
+    })
+
+    it('should include codes from Node.js', function () {
+      Object.keys(http.STATUS_CODES).forEach(function forEachCode (code) {
+        assert.ok(status.message[code], 'contains ' + code)
+      })
     })
   })
 

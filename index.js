@@ -22,7 +22,7 @@ var codes = require('./codes.json')
 module.exports = status
 
 // status code to message map
-status.STATUS_CODES = codes
+status.message = codes
 
 // array of status codes
 status.codes = populateStatusesMap(status, codes)
