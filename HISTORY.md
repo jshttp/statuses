@@ -2,6 +2,7 @@ unreleased
 ==========
 
   * Drop support for Node.js 0.6
+  * Remove `status[code]` exports; use `status.message[code]`
   * Rename `425 Unordered Collection` to standard `425 Too Early`
   * Rename `STATUS_CODES` export to `message`
 

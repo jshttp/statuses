@@ -65,7 +65,6 @@ function populateStatusesMap (statuses, codes) {
     var status = Number(code)
 
     // Populate properties
-    statuses[status] = message
     statuses[message] = status
     statuses[message.toLowerCase()] = status
 
@@ -92,7 +91,7 @@ function populateStatusesMap (statuses, codes) {
 
 function status (code) {
   if (typeof code === 'number') {
-    if (!status[code]) throw new Error('invalid status code: ' + code)
+    if (!status.message[code]) throw new Error('invalid status code: ' + code)
     return code
   }
 
@@ -103,7 +102,7 @@ function status (code) {
   // '403'
   var n = parseInt(code, 10)
   if (!isNaN(n)) {
-    if (!status[n]) throw new Error('invalid status code: ' + n)
+    if (!status.message[n]) throw new Error('invalid status code: ' + n)
     return n
   }
 
