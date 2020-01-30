@@ -6,8 +6,9 @@ var path = require('path')
 var write = require('./lib/write')
 
 var URL = 'https://raw.githubusercontent.com/nodejs/node/master/lib/_http_server.js'
+var HEADERS = { 'User-Agent': 'nodejs/' + process.version + ' (' + process.platform + ', npm:statuses)' }
 
-https.get(URL, function onResponse (res) {
+https.get(URL, { headers: HEADERS }, function onResponse (res) {
   getBody(res, true, function (err, body) {
     if (err) throw err
 

@@ -7,8 +7,9 @@ var toArray = require('stream-to-array')
 var write = require('./lib/write')
 
 var URL = 'https://www.iana.org/assignments/http-status-codes/http-status-codes-1.csv'
+var HEADERS = { 'User-Agent': 'nodejs/' + process.version + ' (' + process.platform + ', npm:statuses)' }
 
-https.get(URL, function onResponse (res) {
+https.get(URL, { headers: HEADERS }, function onResponse (res) {
   toArray(res.pipe(parser()), function (err, rows) {
     if (err) throw err
 
