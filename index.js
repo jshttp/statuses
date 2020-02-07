@@ -24,8 +24,11 @@ module.exports = status
 // status code to message map
 status.message = codes
 
+// status message (lower-case) to code map
+status.code = createMessageToStatusCodeMap(codes)
+
 // array of status codes
-status.codes = populateStatusesMap(status, codes)
+status.codes = createStatusCodeList(codes)
 
 // status codes for redirects
 status.redirect = {
@@ -53,26 +56,33 @@ status.retry = {
 }
 
 /**
- * Populate the statuses map for given codes.
+ * Create a map of message to status code.
  * @private
  */
 
-function populateStatusesMap (statuses, codes) {
-  var arr = []
+function createMessageToStatusCodeMap (codes) {
+  var map = {}
 
   Object.keys(codes).forEach(function forEachCode (code) {
     var message = codes[code]
     var status = Number(code)
 
-    // Populate properties
-    statuses[message] = status
-    statuses[message.toLowerCase()] = status
-
-    // Add to array
-    arr.push(status)
+    // populate map
+    map[message.toLowerCase()] = status
   })
 
-  return arr
+  return map
+}
+
+/**
+ * Create a list of all status codes.
+ * @private
+ */
+
+function createStatusCodeList (codes) {
+  return Object.keys(codes).map(function mapCode (code) {
+    return Number(code)
+  })
 }
 
 /**
@@ -106,7 +116,7 @@ function status (code) {
     return n
   }
 
-  n = status[code.toLowerCase()]
+  n = status.code[code.toLowerCase()]
   if (!n) throw new Error('invalid status message: "' + code + '"')
   return n
 }

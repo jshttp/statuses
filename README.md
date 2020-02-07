@@ -53,16 +53,15 @@ status(306) // throws, as it's not supported by node.js
 
 Returns an array of all the status codes as `Integer`s.
 
-### var code = status[msg]
+### sttus.code[msg]
 
-Map of `status message` to `code`. `msg` can either be title-cased or
-lower-cased. `undefined` for invalid `status message`s.
+Returns the numeric status code for a known status message (in lower-case),
+otherwise `undefined`.
 
 <!-- eslint-disable no-undef, no-unused-expressions -->
 
 ```js
 status['not found'] // => 404
-status['Not Found'] // => 404
 ```
 
 ### status.empty[code]
