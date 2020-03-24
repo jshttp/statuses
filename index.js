@@ -68,6 +68,7 @@ function populateStatusesMap (statuses, codes) {
     statuses[status] = message
     statuses[message] = status
     statuses[message.toLowerCase()] = status
+    statuses[message.replace(/\W/g, '')] = status
 
     // Add to array
     arr.push(status)

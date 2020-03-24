@@ -75,6 +75,14 @@ describe('status', function () {
     })
   })
 
+  describe('when given a non-whitespace string', function () {
+    it('should be truthy when a valid status message', function () {
+      assert.ok(status.OK)
+      assert.ok(status.NotFound)
+      assert.ok(status.InternalServerError)
+    })
+  })
+
   describe('.STATUS_CODES', function () {
     it('should be a map of code to message', function () {
       assert.strictEqual(status.STATUS_CODES[200], 'OK')
