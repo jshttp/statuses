@@ -121,6 +121,10 @@ status.retry[501] // => undefined
 status.retry[503] // => true
 ```
 
+## License
+
+[MIT](LICENSE)
+
 [coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/statuses/master
 [coveralls-url]: https://coveralls.io/r/jshttp/statuses?branch=master
 [node-version-image]: https://badgen.net/npm/node/statuses
