@@ -34,24 +34,30 @@ $ npm install statuses
 var status = require('statuses')
 ```
 
-### var code = status(Integer || String)
+### status(code)
 
-If `Integer` or `String` is a valid HTTP code then the matching status
-message will be returned.
-
-If `String` is a valid HTTP status message, then the matching `code`
-will be returned.
-
-Otherwise, an error will be thrown.
+Returns the status message string for a known HTTP status code. The code
+may be a number or a string. An error is thrown for an unknown status code.
 
 <!-- eslint-disable no-undef -->
 
 ```js
-status(403) // => 'Forbibben'
-status('403') // => 'Forbibben'
+status(403) // => 'Forbidden'
+status('403') // => 'Forbidden'
+status(306) // throws
+```
+
+### status(msg)
+
+Returns the numeric status code for a known HTTP status message. The message
+is case-insensitive. An error is thrown for an unknown status message.
+
+<!-- eslint-disable no-undef -->
+
+```js
 status('forbidden') // => 403
 status('Forbidden') // => 403
-status(306) // throws, as it's no longer supported by the HTTP spec
+status('foo') // throws
 ```
 
 ### status.codes
