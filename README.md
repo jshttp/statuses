@@ -1,7 +1,7 @@
 # Statuses
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
+[![NPM Version][npm-version-image]][npm-url]
+[![NPM Downloads][npm-downloads-image]][npm-url]
 [![Node.js Version][node-version-image]][node-version-url]
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
@@ -121,13 +121,12 @@ status.retry[501] // => undefined
 status.retry[503] // => true
 ```
 
-[npm-image]: https://img.shields.io/npm/v/statuses.svg
-[npm-url]: https://npmjs.org/package/statuses
-[node-version-image]: https://img.shields.io/node/v/statuses.svg
-[node-version-url]: https://nodejs.org/en/download
-[travis-image]: https://img.shields.io/travis/jshttp/statuses.svg
-[travis-url]: https://travis-ci.org/jshttp/statuses
-[coveralls-image]: https://img.shields.io/coveralls/jshttp/statuses.svg
+[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/statuses/master
 [coveralls-url]: https://coveralls.io/r/jshttp/statuses?branch=master
-[downloads-image]: https://img.shields.io/npm/dm/statuses.svg
-[downloads-url]: https://npmjs.org/package/statuses
+[node-version-image]: https://badgen.net/npm/node/statuses
+[node-version-url]: https://nodejs.org/en/download
+[npm-downloads-image]: https://badgen.net/npm/dm/statuses
+[npm-url]: https://npmjs.org/package/statuses
+[npm-version-image]: https://badgen.net/npm/v/statuses
+[travis-image]: https://badgen.net/travis/jshttp/statuses/master
+[travis-url]: https://travis-ci.org/jshttp/statuses
