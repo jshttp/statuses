@@ -58,7 +58,7 @@ status(306) // throws, as it's no longer supported by the HTTP spec
 
 Returns an array of all the status codes as `Integer`s.
 
-### sttus.code[msg]
+### status.code[msg]
 
 Returns the numeric status code for a known status message (in lower-case),
 otherwise `undefined`.
