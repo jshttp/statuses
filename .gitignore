@@ -21,4 +21,5 @@ package-lock.json
 
 
 # Coveralls
+.nyc_output
 coverage
