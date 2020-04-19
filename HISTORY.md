@@ -1,5 +1,5 @@
-unreleased
-==========
+2.0.0 / 2020-04-19
+==================
 
   * Drop support for Node.js 0.6
   * Fix messaging casing of `418 I'm a Teapot`
