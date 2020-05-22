@@ -96,8 +96,8 @@ script:
     fi
 after_script:
   - |
-    # Upload coverage to coveralls, if exists
-    if [[ -f ./coverage/lcov.info ]]; then
+    # Upload coverage to coveralls
+    if [[ -d .nyc_output ]]; then
       npm install --save-dev coveralls@2
-      coveralls < ./coverage/lcov.info
+      nyc report --reporter=text-lcov | coveralls
     fi
