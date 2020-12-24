@@ -72,6 +72,8 @@ describe('status', function () {
 
     it('should throw for unknown status message', function () {
       assert.throws(status.bind(null, 'too many bugs'), /invalid status message/)
+      assert.throws(status.bind(null, 'constructor'), /invalid status message/)
+      assert.throws(status.bind(null, '__proto__'), /invalid status message/)
     })
 
     it('should throw for unknown status code', function () {

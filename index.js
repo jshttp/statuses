@@ -86,6 +86,34 @@ function createStatusCodeList (codes) {
 }
 
 /**
+ * Get the status code for given message.
+ * @private
+ */
+
+function getStatusCode (message) {
+  var msg = message.toLowerCase()
+
+  if (!Object.prototype.hasOwnProperty.call(status.code, msg)) {
+    throw new Error('invalid status message: "' + message + '"')
+  }
+
+  return status.code[msg]
+}
+
+/**
+ * Get the status message for given code.
+ * @private
+ */
+
+function getStatusMessage (code) {
+  if (!Object.prototype.hasOwnProperty.call(status.message, code)) {
+    throw new Error('invalid status code: ' + code)
+  }
+
+  return status.message[code]
+}
+
+/**
  * Get the status code.
  *
  * Given a number, this will throw if it is not a known status
@@ -101,8 +129,7 @@ function createStatusCodeList (codes) {
 
 function status (code) {
   if (typeof code === 'number') {
-    if (!status.message[code]) throw new Error('invalid status code: ' + code)
-    return status.message[code]
+    return getStatusMessage(code)
   }
 
   if (typeof code !== 'string') {
@@ -112,11 +139,8 @@ function status (code) {
   // '403'
   var n = parseInt(code, 10)
   if (!isNaN(n)) {
-    if (!status.message[n]) throw new Error('invalid status code: ' + n)
-    return status.message[n]
+    return getStatusMessage(n)
   }
 
-  n = status.code[code.toLowerCase()]
-  if (!n) throw new Error('invalid status message: "' + code + '"')
-  return n
+  return getStatusCode(code)
 }
