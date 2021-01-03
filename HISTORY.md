@@ -1,5 +1,5 @@
-unreleased
-==========
+2.0.1 / 2021-01-03
+==================
 
   * Fix returning values from `Object.prototype`
 
