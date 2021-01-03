@@ -3,7 +3,7 @@
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
 [![Node.js Version][node-version-image]][node-version-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][ci-image]][ci-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
 HTTP status utility for node.
@@ -125,6 +125,8 @@ status.retry[503] // => true
 
 [MIT](LICENSE)
 
+[ci-image]: https://badgen.net/github/checks/jshttp/statuses/master?label=ci
+[ci-url]: https://github.com/jshttp/statuses/actions?query=workflow%3Aci
 [coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/statuses/master
 [coveralls-url]: https://coveralls.io/r/jshttp/statuses?branch=master
 [node-version-image]: https://badgen.net/npm/node/statuses
@@ -132,5 +134,3 @@ status.retry[503] // => true
 [npm-downloads-image]: https://badgen.net/npm/dm/statuses
 [npm-url]: https://npmjs.org/package/statuses
 [npm-version-image]: https://badgen.net/npm/v/statuses
-[travis-image]: https://badgen.net/travis/jshttp/statuses/master
-[travis-url]: https://travis-ci.org/jshttp/statuses
