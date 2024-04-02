@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         name:
@@ -28,6 +28,8 @@ jobs:
         - Node.js 13.x
         - Node.js 14.x
         - Node.js 15.x
+        - Node.js 16.x
+        - Node.js 17.x
 
         include:
         - name: Node.js 0.8
@@ -80,25 +82,30 @@ jobs:
           npm-i: mocha@7.2.0 nyc@14.1.1
 
         - name: Node.js 10.x
-          node-version: "10.23"
+          node-version: "10.24"
+          npm-i: mocha@8.4.0
 
         - name: Node.js 11.x
           node-version: "11.15"
+          npm-i: mocha@8.4.0
 
         - name: Node.js 12.x
-          node-version: "12.20"
+          node-version: "12.22"
 
         - name: Node.js 13.x
           node-version: "13.14"
 
         - name: Node.js 14.x
-          node-version: "14.15"
+          node-version: "14.18"
 
         - name: Node.js 15.x
-          node-version: "15.5"
+          node-version: "15.14"
 
         - name: Node.js 16.x
-          node-version: "16.2"
+          node-version: "16.13"
+
+        - name: Node.js 17.x
+          node-version: "17.2"
 
     steps:
     - uses: actions/checkout@v2
@@ -107,7 +114,10 @@ jobs:
       shell: bash -eo pipefail -l {0}
       run: |
         nvm install --default ${{ matrix.node-version }}
-        if [[ "${{ matrix.node-version }}" == 0.* ]]; then
+        if [[ "${{ matrix.node-version }}" == 0.* && "$(cut -d. -f2 <<< "${{ matrix.node-version }}")" -lt 10 ]]; then
+          nvm install --alias=npm 0.10
+          nvm use ${{ matrix.node-version }}
+          sed -i '1s;^.*$;'"$(printf '#!%q' "$(nvm which npm)")"';' "$(readlink -f "$(which npm)")"
           npm config set strict-ssl false
         fi
         dirname "$(nvm which ${{ matrix.node-version }})" >> "$GITHUB_PATH"
@@ -185,3 +195,4 @@ jobs:
       with:
         github-token: ${{ secrets.github_token }}
         parallel-finished: true
+        
