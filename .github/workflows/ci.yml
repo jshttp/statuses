@@ -4,9 +4,15 @@ on:
 - pull_request
 - push
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-20.04
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      checks: write  # for coverallsapp/github-action to create new checks
     strategy:
       matrix:
         name:
@@ -124,7 +130,7 @@ jobs:
           node-version: "21.7"
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
 
     - name: Install Node.js ${{ matrix.node-version }}
       shell: bash -eo pipefail -l {0}
@@ -195,7 +201,7 @@ jobs:
       run: npm run lint
 
     - name: Collect code coverage
-      uses: coverallsapp/github-action@master
+      uses: coverallsapp/github-action@3dfc5567390f6fa9267c0ee9c251e4c8c3f18949 #v2.2.3
       if: steps.list_env.outputs.nyc != ''
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -205,9 +211,12 @@ jobs:
   coverage:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      checks: write  # for coverallsapp/github-action to create new checks
     steps:
     - name: Upload code coverage
-      uses: coverallsapp/github-action@master
+      uses: coverallsapp/github-action@3dfc5567390f6fa9267c0ee9c251e4c8c3f18949 #v2.2.3
       with:
         github-token: ${{ secrets.github_token }}
         parallel-finished: true
