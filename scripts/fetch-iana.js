@@ -48,7 +48,7 @@ function generateRowMapper (headers) {
 }
 
 function normalizeHeader (val) {
-  return val.substr(0, 1).toLowerCase() + val.substr(1).replace(/ (.)/, function (s, c) {
+  return val.slice(0, 1).toLowerCase() + val.slice(1).replace(/ (.)/, function (s, c) {
     return c.toUpperCase()
   })
 }
