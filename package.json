@@ -6,7 +6,10 @@
     "Douglas Christopher Wilson <doug@somethingdoug.com>",
     "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
   ],
-  "repository": "jshttp/statuses",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/statuses.git"
+  },
   "license": "MIT",
   "keywords": [
     "http",
