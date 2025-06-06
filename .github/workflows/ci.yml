@@ -133,7 +133,7 @@ jobs:
           node-version: "21"
 
         - name: Node.js 22.x
-          node-version: "22
+          node-version: "22"
 
         - name: Node.js 23.x
           node-version: "23"
