@@ -37,7 +37,7 @@
     "eslint-plugin-standard": "4.1.0",
     "mocha": "8.4.0",
     "nyc": "15.1.0",
-    "raw-body": "2.5.2",
+    "raw-body": "2.5.3",
     "stream-to-array": "2.3.0"
   },
   "engines": {
